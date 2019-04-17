@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Websocket - slides</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
+
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="reveal" id="app" @click="onAppClick">
+      <div class="key-form" v-if="!granted">
+        <form @submit.prevent="handleSubmit">
+          <p class="form-message" v-if="error">You shall not pass.</p>
+          <input type="text" placeholder="Secret key" v-model="key" ref="key" autofocus>
+          <button type="submit">Go</button>
+        </form>
+      </div>
+      <div class="slides">
+        <section>Slide 1</section>
+        <section>Slide 2</section>
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+    <script src="js/socket.io.js"></script>
+    <script src="js/vue.common.dev.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
